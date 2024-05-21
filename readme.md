@@ -367,7 +367,12 @@ logAtMost5(7);
 
 * [Objectives & Discussion](#objectives--discussion)
 * [Step 1: Understand the Problem](#step-1-understand-the-problem)
+* [Step 2: Explore Concrete Examples](#step-2-explore-concrete-examples)
+* [Step 3: Break It Down](#step-3-break-it-down)
+* [Step 4: Solve or Simplify](#step-4-solve-or-simplify)
+* [Step 5: Look Back and Refactor](#step-5-look-back-and-refactor)
 
+----
 ### Objectives & Discussion
 
 * Define what an algorithm is
@@ -387,3 +392,89 @@ logAtMost5(7);
 
 ----
 ### Step 1: Understand the Problem
+
+1. Can I restate the problem in my own words?
+2. What are the inputs that go into the problem?
+3. What are the outputs that should come from the solution to the problem?
+4. Can the outputs be determined from the inputs? Do you have enough information to solve the problem?
+5. How should I label the important pieces of data that are part of the problem?
+
+**Test Case:** Write a function which takes two numbers and returns their sum.
+
+```javascript
+  // 1. Can I restate the problem in my own words? - "implement addition"
+  // 2. What are the inputs that go into the problem? - ints? floats? maybe string for large numbers?
+  // 3. What are the outputs that should come from the solution to the problem? - int? float? string?
+  // 4. Can the outputs be determined from the inputs? Do you have enough information to solve the problem?
+  // 5. How should I label the important pieces of data that are part of the problem?
+
+  // POSSIBLE SOLUTION
+  function returnSum(num1, num2) {
+  return num1 + num2;
+  }
+```
+
+----
+### Step 2: Explore Concrete Examples
+
+Coming up with examples help you understand the problem better (e.x. User Stories, Unit Tests)
+
+* Start with Simple Examples
+* Progress to More Complex Examples
+* Explore Examples with Empty Inputs
+* Explore Examples with Invalid Inputs
+
+**Test Case:** Write a function which takes in a string and returns counts of each character in the string.
+
+```javascript
+  charCount("aaaa") // {a:4}
+  charCount("aaaa") // {a:4, b:0, c:0, d:0, e:0, etc..}
+  charCount("hello") // {h:1, e:1, l:2, o:1}
+
+  // "my phone number is 123456789"
+  // "hello world"
+
+  charCount("hello worlds") // {h:1, e:1, l:3, o:2, d:1, s:1, w:1, " ":1}
+```
+
+----
+### Step 3: Break It Down
+
+* **Explicitly write out the steps you need to take:** this forces you to think about the code you'll write before you write it, and helps you catch any lingering conceptual issues or misunderstandings before you dive in and start coding.
+
+```javascript
+  function charCount(string) {
+  // Method that returns an object with keys that are lowercase alphanumeric characters in the string
+  // - values should be the counts for those characters
+
+  // create object to return at end
+
+  // loop over string for each char
+    // if char is a number/letter AND key in object, add one to count
+    // if char is a number/letter AND not in object, add it to object and set value to one
+    // if char is something else (space, period, etc.) don't do anything
+
+  // return object at end
+}
+
+  // POSSIBLE SOLUTION
+  function charCount(string) {
+    var result = {}
+    string.toLowerCase().split('').forEach(letter => {
+      result.hasOwnProperty(letter) ? result[letter] += 1 : result[letter] = 1;
+    });
+    return result;
+  }
+```
+
+----
+### Step 4: Solve or Simplify
+
+**Simplify**
+  * Find the core difficulty in what you are trying to do
+  * Temporarily ignore that difficulty
+  * Write a simplified solution
+  * Then incorporate that difficulty back in
+
+----
+### Step 5: Look Back and Refactor
