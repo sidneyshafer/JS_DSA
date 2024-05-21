@@ -2,6 +2,7 @@
 
 * [Big O Notation](#big-o-notation)
 * [Array and Object Performance](#array-and-object-performance)
+* [Problem Solving Approach](#problem-solving-approach)
 
 ----
 ## Big O Notation
@@ -280,6 +281,8 @@ logAtMost5(7);
 }
 ```
 
+[Back to Top](#js-data-structures--algorithms) :arrow_up:
+
 ----
 ## Array and Object Performance
 
@@ -355,3 +358,25 @@ logAtMost5(7);
 | splice | **O(*n*)** |
 | sort | **O(*n* * log *n*)** |
 | forEach/map/filter/reduce/etc. | **O(*n*)** |
+
+----
+## Problem Solving Approach
+
+* [Objectives & Discussion](#objectives--discussion)
+
+### Objectives & Discussion
+
+* Define what an algorithm is
+* Devise a plan to solve algorithms
+* Compare and contrast problem solving patterns including frequency counters, two pointer problems and divide and conquer
+
+**An Algorithm is:** a *process* or *set of steps* to accomplish a certain task.
+  * Almost everything done in programming involves some kind of algorithm.
+  * It is the foundation for being a successful problem solving developer.
+
+**Problem Solving**
+  * Understand the Problem
+  * Explore Concrete Examples
+  * Break it Down
+  * Solve/Simplify
+  * Look Back and Refactor
