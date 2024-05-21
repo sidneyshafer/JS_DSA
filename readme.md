@@ -359,10 +359,14 @@ logAtMost5(7);
 | sort | **O(*n* * log *n*)** |
 | forEach/map/filter/reduce/etc. | **O(*n*)** |
 
+
+[Back to Top](#js-data-structures--algorithms) :arrow_up:
+
 ----
 ## Problem Solving Approach
 
 * [Objectives & Discussion](#objectives--discussion)
+* [Step 1: Understand the Problem](#step-1-understand-the-problem)
 
 ### Objectives & Discussion
 
@@ -380,3 +384,6 @@ logAtMost5(7);
   * Break it Down
   * Solve/Simplify
   * Look Back and Refactor
+
+----
+### Step 1: Understand the Problem
