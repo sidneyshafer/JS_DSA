@@ -303,6 +303,7 @@ logAtMost5(7);
 * When you need fast access / insertion and removal
 
 **Big O of Objects**
+|  |  |
 | --- | --- |
 | Insertion | **O(1)** |
 | Removal | **O(1)** |
@@ -310,6 +311,7 @@ logAtMost5(7);
 | Access | **O(1)** |
 
 **Big O of Object Methods**
+|  |  |
 | --- | --- |
 | Object.keys | **O(*n*)** |
 | Object.values | **O(*n*)** |
@@ -327,6 +329,7 @@ logAtMost5(7);
 * When you need fast access / insertion and removal
 
 **Big O of Arrays**
+|  |  |
 | --- | --- |
 | Insertion | ***it depends...*** |
 | Removal | ***it depends...*** |
@@ -341,6 +344,7 @@ logAtMost5(7);
   * push() and pop() are always more efficient than shift() and unshift()
 
 **Big O of Array Operations**
+|  |  |
 | --- | --- |
 | push | **O(1)** |
 | pop | **O(1)** |
