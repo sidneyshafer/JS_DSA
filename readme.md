@@ -562,6 +562,7 @@ Coming up with examples help you understand the problem better (e.x. User Storie
 ## Problem Solving Patterns
 
 * [Different Patterns](#different-patterns)
+* [Frequency Counter](#frequency-counter)
 
 ### Different Patterns
 
@@ -573,7 +574,10 @@ Coming up with examples help you understand the problem better (e.x. User Storie
 * Greedy Algorithms
 * Backtracking
 
-**Frequency Counter:** This pattern uses objects or sets to collect values/frequencies of values. This can often avoid the need for nested loops or O(*n*<sup>2</sup>) operations with arrays/strings.
+----
+### Frequency Counter
+
+This pattern uses objects or sets to collect values/frequencies of values. This can often avoid the need for nested loops or O(*n*<sup>2</sup>) operations with arrays/strings.
 
 **Example Case:** Write a function called **same**, which accepts two arrays. The function should return true if every value in the array has it's corresponding value squared in the second array. The frequency of values must be the same.
 
