@@ -476,5 +476,83 @@ Coming up with examples help you understand the problem better (e.x. User Storie
   * Write a simplified solution
   * Then incorporate that difficulty back in
 
+**Solution**
+```javascript
+  function charCount2(string) {
+  // 1. create a new object to return
+  var result = {};
+
+  // 2. loop over each char in string
+  for (var i = 0; i < string.length; i++) {
+    // 3. store current char in variable - convert to lowercase
+    var char = string[i].toLowerCase();
+    // 4. get char code and store in variable
+    var charCode = char.charCodeAt(0);
+
+    // 5. check if char is an alphanumeric character
+    if ((charCode > 47 && charCode < 58) || (charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)) {
+      // 6. if char is alphanumeric,
+        // check to see if it is already in object
+        // if char already exists, increment count by 1
+        // else, add the char to object and set value to 1
+      result[char] > 0 ? result[char]++ : result[char] = 1;
+    }
+  }
+  // 7. return result object
+  return result;
+}
+```
+
+**Character Codes**
+```javascript
+  // Char Codes
+  // (char > 47 && char < 58) - checking for numeric (0-9)
+  // (char > 64 && char < 91) - checking for upper alpha (A-Z)
+  // (char > 96 && char < 123) - checking for lower alpha (a-z)
+```
+
 ----
 ### Step 5: Look Back and Refactor
+
+**Refactoring Questions**
+* Can you check the result?
+* Can you derive the result differently?
+* Can you understand it at a glance?
+* Can you use the result or method for some other problem?
+* Can you improve the performance of your solution?
+* Can you think of other ways to refactor?
+* How have other people solved this problem?
+
+**Refactored Solution**
+```javascript
+  // REFACTORED SOLUTION
+  function charCount3(string) {
+    var result = {};
+    string.toLowerCase().split('').forEach((char) => {
+      charCode = char.charCodeAt(0);
+
+      if ((charCode > 47 && charCode < 58) || (charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)) {
+        result[char] > 0 ? result[char]++ : result[char] = 1;
+      }
+    });
+    return result;
+  }
+```
+
+**Different Solution to Problem**
+```javascript
+  // DIFFERENT SOLUTION
+  // - using regex expressions
+  function charCount4(string) {
+    let result = {};
+
+    string.toLowerCase().split('').forEach((char) => {
+      if (/[a-z0-9]/.test(char)) {
+        result[char] = ++result[char] || 1;
+        }
+    });
+    return result;
+  }
+```
+
+----
