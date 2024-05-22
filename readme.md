@@ -3,6 +3,7 @@
 * [Big O Notation](#big-o-notation)
 * [Array and Object Performance](#array-and-object-performance)
 * [Problem Solving Approach](#problem-solving-approach)
+* [Problem Solving Patterns](#problem-solving-patterns)
 
 ----
 ## Big O Notation
@@ -553,6 +554,93 @@ Coming up with examples help you understand the problem better (e.x. User Storie
     });
     return result;
   }
+```
+
+[Back to Top](#js-data-structures--algorithms) :arrow_up:
+
+----
+## Problem Solving Patterns
+
+* [Different Patterns](#different-patterns)
+
+### Different Patterns
+
+* Frequency Counter
+* Multiple Pointers
+* Sliding Window
+* Divide and Conquer
+* Dynamic Programming
+* Greedy Algorithms
+* Backtracking
+
+**Frequency Counter:** This pattern uses objects or sets to collect values/frequencies of values. This can often avoid the need for nested loops or O(*n*<sup>2</sup>) operations with arrays/strings.
+
+**Example Case:** Write a function called **same**, which accepts two arrays. The function should return true if every value in the array has it's corresponding value squared in the second array. The frequency of values must be the same.
+
+**Solution 1: Naive Approach**
+```javascript
+  function same(arr1, arr2) {
+  // input: two arrays of numbers (arr1, arr2)
+  // output: boolean (true or false)
+
+  // check length of both arrays (if not the same length, return false)
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+
+  // loop through first array
+  for (let i = 0; i < arr1.length; i++) {
+    // get the index from  array 2 where the value equals the squared value from array 1
+    let correctIndex = arr2.indexOf(arr1[i] ** 2)
+    // if the index is not found, return false
+    if (correctIndex === -1) {
+      return false;
+    }
+    arr2.splice(correctIndex, 1);
+  }
+  return true;
+}
+```
+
+**Solution 2: Refactored with Frequency Counter**
+```javascript
+  function same2(arr1, arr2) {
+  // check length of both arrays (if not the same length, return false)
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  
+  // create objects to store frequency count
+  let frequencyCounter1 = {};
+  let frequencyCounter2 = {};
+
+  // loop through first array
+  for (let val of arr1) {
+    frequencyCounter1[val] = ++frequencyCounter1[val] || 1;
+  }
+
+  // loop through second array
+  for (let val of arr2) {
+    frequencyCounter2[val] = ++frequencyCounter2[val] || 1;
+  }
+
+  console.log(frequencyCounter1);
+  console.log(frequencyCounter2);
+
+  // loop through first frequency counter
+  for (let key in frequencyCounter1) {
+    // if the key (squared) does not match a key in the second frequency counter, return false
+    if(!(key ** 2 in frequencyCounter2)) {
+      return false;
+    }
+    // if the value of the key (squared) in the second frequency counter does match the value of the key in the first frequency counter, then return false
+    if(frequencyCounter2[key ** 2] !== frequencyCounter1[key]) {
+      return false;
+    }
+  }
+  // if valid, return true
+  return true;
+}
 ```
 
 ----
