@@ -33,6 +33,9 @@ function charCount(string) {
     return result;
 }
 
+// SOLUTION - 1
+// Method that returns an object with keys that are lowercase alphanumeric characters in the string
+// - values should be the counts for those characters
 function charCount2(string) {
   // 1. create a new object to return
   var result = {};
@@ -57,11 +60,53 @@ function charCount2(string) {
   return result;
 }
 
+// Char Codes
+  // (char > 47 && char < 58) - checking for numeric (0-9)
+  // (char > 64 && char < 91) - checking for upper alpha (A-Z)
+  // (char > 96 && char < 123) - checking for lower alpha (a-z)
+
+// REFACTORED SOLUTION
+function charCount3(string) {
+  var result = {};
+  string.toLowerCase().split('').forEach((char) => {
+    charCode = char.charCodeAt(0);
+
+    if ((charCode > 47 && charCode < 58) || (charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)) {
+      result[char] > 0 ? result[char]++ : result[char] = 1;
+    }
+  });
+  return result;
+}
+
+// DIFFERENT SOLUTION
+// - using regex expressions
+function charCount4(string) {
+  let result = {};
+
+  string.toLowerCase().split('').forEach((char) => {
+    if (/[a-z0-9]/.test(char)) {
+       result[char] = ++result[char] || 1;
+      }
+  });
+  return result;
+}
+
 console.log(charCount("hello"));
-console.log(charCount("bye"));
 console.log(charCount("my phone number is 123456789"));
 console.log(charCount("HELLO world"));
+console.log("\n");
 
-
+console.log(charCount("hello"));
 console.log(charCount2("my phone number is 123456789!!!"));
 console.log(charCount2("HELLO world"));
+console.log("\n");
+
+console.log(charCount3("hello"));
+console.log(charCount3("my phone number is 123456789"));
+console.log(charCount3("HELLO world"));
+console.log("\n");
+
+console.log(charCount4("hello"));
+console.log(charCount4("my phone number is 123456789"));
+console.log(charCount4("HELLO world"));
+console.log("\n");
