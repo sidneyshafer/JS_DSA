@@ -563,6 +563,7 @@ Coming up with examples help you understand the problem better (e.x. User Storie
 
 * [Different Patterns](#different-patterns)
 * [Frequency Counter](#frequency-counter)
+* [Multiple Pointers](#multiple-pointers)
 
 ### Different Patterns
 
@@ -714,6 +715,83 @@ This pattern uses objects or sets to collect values/frequencies of values. This 
     }
   }
   return true;
+}
+```
+
+----
+### Multiple Pointers
+
+Creating **pointers** or values that correspond to an index or position and move towards the beginning, end, or middle based on certain conditions. Very efficient for solving problems with minimal space complexity as well.
+
+**Example Case:** Write a function called **sumZero** which accepts a **sorted** array of integers. The function should find the **first** pair where the sum is 0. Return an array that includes both values that sum to zero or undefined if a pair does not exist.
+
+**Naive Solution**
+```javascript
+  // Time Complexity - 0(n^2)
+  // Space Complexity - 0(1)
+  function sumZeroNaive(arr) {
+    for(let i = 0; i < arr.length; i++) {
+      for(let j = i+1; j < arr.length; j++) {
+        if(arr[i] + arr[j] === 0) {
+          return [arr[i], arr[j]];
+        }
+      }
+    }
+  }
+```
+
+**Refactored Solution**
+```javascript
+  // Time Complexity - 0(n)
+  // Space Complexity - 0(1)
+  function sumZero(arr) {
+    let left = 0;
+    let right = arr.length - 1;
+    while(left < right) {
+      let sum = arr[left] + arr[right];
+      if(sum === 0) {
+        return [arr[left], arr[right]];
+      } else if (sum > 0) {
+        right--;
+      } else {
+        left++;
+      }
+    }
+  }
+```
+
+**Another Example Case:** Implement a function called which accepts a sorted array, and counts the unique values in the array. There can be negative numbers in the array, but it will always be sorted.
+
+**Solution 1**
+```javascript
+  function countUniqueValues(arr) {
+  let pointer = 0;
+  let count = 0;
+  while(pointer < arr.length) {
+    if(arr[pointer] !== arr[pointer + 1]) {
+      arr.splice(pointer, 0);
+      count++;
+      pointer++;
+    }
+    else {
+      pointer++;
+    }
+  }
+  return count;
+}
+```
+
+**Solution 2**
+```javascript
+  function countUniqueValues2(arr) {
+  var i = 0;
+  for(var j = 1; j < arr.length; j++) {
+    if(arr[i] !== arr[j]) {
+      i++;
+      arr[i] = arr[j];
+    }
+  }
+  return i !== 0 ? i + 1 : 0;
 }
 ```
 
