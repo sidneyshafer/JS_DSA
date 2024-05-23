@@ -11,6 +11,7 @@ validAnagram('rat', 'car') // false
 validAnagram('rat', 'art') // true
 validAnagram('awesome', 'aweso') // false
 
+// SOLUTION 1
 function validAnagram(str1, str2) {
   // convert strings to arrays
   let arr1 = str1.toLowerCase().split('');
@@ -40,7 +41,7 @@ function validAnagram(str1, str2) {
   // loop through freqCount1 object
   for(let key in freqCount1) {
     // if the key in freqCount1 is not in freqCount2, return false
-    if(!key in freqCount2) {
+    if(!(key in freqCount2)) {
       return false;
     }
     // if the value in freqCount1 is not the same as the value in freqCount2, return false
@@ -52,8 +53,43 @@ function validAnagram(str1, str2) {
   return true;
 }
 
+// REFACTORED SOLUTION
+function validAnagram2(str1, str2) {
+  // check length of each string
+  if(str1.length !== str2.length) {
+    return false;
+  }
+
+  // create a counter object
+  const counter = {};
+
+  // loop through the first string
+  for(let val of str1) {
+    // if letter exists, increment, otherwise set to 1
+    counter[val] = ++counter[val] || 1;
+  }
+
+  // loop through the second string
+  for(let val of str2) {
+    // can't find letter or letter is zero then it is not an anagram, return false
+    if (!counter[val]) {
+      return false;
+    } else {
+      counter[val] -= 1;
+    }
+  }
+  return true;
+}
+
 console.log(validAnagram(' ', ' '));
 console.log(validAnagram('aaz', 'zza'));
 console.log(validAnagram('anagram', 'ramanag'));
 console.log(validAnagram('rat', 'car'));
 console.log(validAnagram('rat', 'art'));
+console.log("\n");
+
+console.log(validAnagram2(' ', ' '));
+console.log(validAnagram2('aaz', 'zza'));
+console.log(validAnagram2('anagram', 'ramanag'));
+console.log(validAnagram2('rat', 'car'));
+console.log(validAnagram2('rat', 'art'));
