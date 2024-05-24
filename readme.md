@@ -565,6 +565,7 @@ Coming up with examples help you understand the problem better (e.x. User Storie
 * [Frequency Counter](#frequency-counter)
 * [Multiple Pointers](#multiple-pointers)
 * [Sliding Window](#sliding-window)
+* [Divide and Conquer](#divide-and-conquer)
 
 ### Different Patterns
 
@@ -865,5 +866,51 @@ This pattern involves creating a **window** which can either be an array or numb
   }
 
 ```
+
+----
+### Divide and Conquer
+
+This pattern involves dividing a data set into smaller chunks and then repeating a process with a subset of data. This pattern can tremendously decrease time complexity.
+
+**Example Case:** Given a sorted array of integers, write a function that accepts a value and returns the index where the value passed to the function is located. If the value is not found, return -1.
+
+**Solution 1:**
+```javascript
+  // Linear Search
+  function search(arr, val) {
+    for (i of arr) {
+      if (i === val)
+        return arr.indexOf(i);
+    }
+    return -1;
+  }
+```
+
+**Solution 2:**
+```javascript
+  // Refactored Solution - Binary Search
+  function search2(arr, val) {
+    let min = 0;
+    let max = arr.length - 1;
+
+    while (min <= max) {
+      let middle = Math.floor((min + max) / 2);
+      let currentEl = arr[middle];
+
+      if (arr[middle] < val) {
+        min = middle + 1;
+      }
+      else if (arr[middle] > val) {
+        max = middle - 1;
+      }
+      else {
+        return middle;
+      }
+    }
+    return -1;
+  }
+```
+
+[Back to Top](#js-data-structures--algorithms) :arrow_up:
 
 ----
