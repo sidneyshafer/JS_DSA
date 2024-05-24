@@ -564,6 +564,7 @@ Coming up with examples help you understand the problem better (e.x. User Storie
 * [Different Patterns](#different-patterns)
 * [Frequency Counter](#frequency-counter)
 * [Multiple Pointers](#multiple-pointers)
+* [Sliding Window](#sliding-window)
 
 ### Different Patterns
 
@@ -793,6 +794,76 @@ Creating **pointers** or values that correspond to an index or position and move
   }
   return i !== 0 ? i + 1 : 0;
 }
+```
+
+----
+### Sliding Window
+
+This pattern involves creating a **window** which can either be an array or number from one condition to another. Depending on a certain condition, the window either increases or closes (and a new window is created). This pattern is very useful for keeping track of a subset of data in an array/string etc.
+
+**Example Case:** Write a function which accepts an array of integers and a number (**n**). The function should calculate the maximum sum of **n** consecutive elements in the array.
+
+**Example Input/Output**
+```javascript
+  maxSubarraySum([1,2,5,2,8,1,5], 2) // 10
+  maxSubarraySum([1,2,5,2,8,1,5], 4) // 17
+  maxSubarraySum([4,2,1,6], 1) // 6
+  maxSubarraySum([4,2,1,6,2], 4) // 13
+  maxSubarraySum([], 4) // null
+```
+
+**Solution 1: Naive Approach**
+```javascript
+  // NAIVE APPROACH
+    // Time Complexity - O(n^2)
+    // Input: an array (arr) and number of digits to sum together (num)
+  function maxSubarraySum(arr, num) {
+    // if number is bigger than array, return null
+    if (num > arr.length) {
+      return null;
+    }
+
+    var max = -Infinity;
+    for (let i = 0; i < arr.length - num + 1; i++) {
+      temp = 0;
+      for (let j = 0; j < num; j++) {
+        temp += arr[i + j];
+      }
+      if (temp > max) {
+        max = temp;
+      }
+      //console.log(temp, max);
+    }
+    return max;
+  }
+```
+
+**Solution 2: Refactored**
+```javascript
+  // REFACTORED SOLUTION
+    // - with "sliding window" approach
+    // Time Complexity - O(n)
+  function maxSubarraySum2(arr, num) {
+    let maxSum = 0
+    let tempSum = 0;
+
+    // return null if array length is smaller than number
+    if (arr.length < num) return null;
+
+    // sum together the first "num" digits
+    for (let i = 0; i < num; i++) {
+      maxSum += arr[i];
+    }
+
+    tempSum = maxSum;
+    
+    for (let i = num; i < arr.length; i++) {
+      tempSum = tempSum - arr[i - num] + arr[i];
+      maxSum = Math.max(maxSum, tempSum);
+    }
+    return maxSum;
+  }
+
 ```
 
 ----
