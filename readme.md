@@ -1033,4 +1033,6 @@ With helper method recursion, we have two functions. We have an outer function, 
   }
 ```
 
+[Back to Top](#js-data-structures--algorithms) :arrow_up:
+
 ----
