@@ -4,6 +4,7 @@
 * [Array and Object Performance](#array-and-object-performance)
 * [Problem Solving Approach](#problem-solving-approach)
 * [Problem Solving Patterns](#problem-solving-patterns)
+* [Recursion](#recursion)
 
 ----
 ## Big O Notation
@@ -912,5 +913,124 @@ This pattern involves dividing a data set into smaller chunks and then repeating
 ```
 
 [Back to Top](#js-data-structures--algorithms) :arrow_up:
+
+----
+## Recursion
+
+* [Objectives & Discussion](#objectives--discussion-1)
+* [Recursive Examples](#recursive-examples)
+* [Helper Method Recursion](#helper-method-recursion)
+* [Pure Recursion](#pure-recursion)
+
+----
+### Objectives & Discussion
+
+* Define what recursion is and how it can be used.
+* Understand the two essential components of a recursive function.
+* Visualize the call stack to better debug and understand recursive functions.
+* Use helper method recursion and pure recursion to solve more difficult problems.
+
+**Recursion is:** A process (a function in our case) that calls itself.
+
+In almost all programming languages, there is a built in data structure named **call stack** that manages what happens when functions are invoked.
+
+**The Call Stack**
+* It is a **stack** data structure.
+* Any time a function is invoked, it is placed (**pushed**) on top of the call stack.
+* When JavaScript sees the **return** keyword or when the function ends, the compiler will remove (**pop**) from the top.
+
+Two essential parts of a recursive function: Base Case and Different Input (the recursive call).
+
+**Base Case**: The condition when the recursion ends.
+
+----
+### Recursive Examples
+
+**Example 1**
+```javascript
+  function countDown(num) {
+    if (num <= 0) {
+      console.log('DONE');
+      return;
+    }
+    console.log(num);
+    num--;
+    countDown(num);
+  }
+```
+
+**Example 2**
+```javascript
+  function sumRange(num) {
+    if (num === 1) return 1;
+    return num + sumRange(num - 1);
+  }
+```
+
+**Example 3**
+```javascript
+  function factorial(num) {
+    if (num === 1) return 1;
+    return num * factorial(num - 1);
+  }
+```
+
+----
+### Helper Method Recursion
+
+With helper method recursion, we have two functions. We have an outer function, and then inside the outer function, we have an inner function that is recursive.
+
+**Example Pattern**
+```javascript
+  function outer(input) {
+    var outerScopedVariable = [];
+
+    function helper(helperInput) {
+      // recursive call of inner function
+      helper(helperInput--);
+    }
+
+    // call inner function
+    helper(input);
+
+    return outerScopedVariable;
+  }
+```
+
+**Example Function**
+```javascript
+  function collectOddValues(arr) {
+    let result = [];
+
+    function helper(input) {
+      if (input.length === 0) return;
+
+      if (input[0] % 2 !== 0) result.push(input[0]);
+
+      helper(input.slice(1));
+    }
+
+    helper(arr);
+    return result;
+  }
+```
+
+----
+### Pure Recursion
+
+**Refactored Function**
+```javascript
+  function collectOddValues2(arr) {
+    let newArr = [];
+
+    if (arr.length === 0) return newArr;
+    
+    if (arr[0] % 2 !== 0) newArr.push(arr[0]);
+
+    newArr = newArr.concat(collectOddValues2(arr.slice(1)));
+
+    return newArr;
+  }
+```
 
 ----
