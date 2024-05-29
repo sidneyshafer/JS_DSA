@@ -5,6 +5,7 @@
 * [Problem Solving Approach](#problem-solving-approach)
 * [Problem Solving Patterns](#problem-solving-patterns)
 * [Recursion](#recursion)
+* [Searching Algorithms](#searching-algorithms)
 
 ----
 ## Big O Notation
@@ -1034,5 +1035,48 @@ With helper method recursion, we have two functions. We have an outer function, 
 ```
 
 [Back to Top](#js-data-structures--algorithms) :arrow_up:
+
+----
+## Searching Algorithms
+
+* [Objectives & Discussion](#objectives--discussion-2)
+* [Linear Search](#linear-search)
+
+----
+### Objectives & Discussion
+
+* Describe what a searching algorithm is
+* Implement linear search on arrays
+* Implement binary search on sorted arrays
+* Implement a naive string searching algorithm
+* Implement the KMP string searching algorithm
+
+----
+### Linear Search
+
+**JavaScript Search Methods**
+|  |
+| --- |
+| indexOf |
+| includes |
+| find |
+| findIndex |
+
+**Linear Search Function:** Write a function that accepts an array (of numbers) and a value (number). If an array element is equal to the value, return the index at which the element is found. If it is never found, return -1. *Do not use the indexOf method*
+
+**Solution**
+```javascript
+  function linearSearch(arr, value) {
+    for (var index in arr) {
+      if (arr[index] === value) return index;
+    }
+    return -1;
+  }
+```
+
+**Linear Search Big O**
+* **O(1)** - Best
+* **O(n)** - Average
+* **O(n)** - Worst
 
 ----
