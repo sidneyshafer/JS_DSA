@@ -1041,6 +1041,7 @@ With helper method recursion, we have two functions. We have an outer function, 
 
 * [Objectives & Discussion](#objectives--discussion-2)
 * [Linear Search](#linear-search)
+* [Binary Search](#binary-search)
 
 ----
 ### Objectives & Discussion
@@ -1064,7 +1065,7 @@ With helper method recursion, we have two functions. We have an outer function, 
 
 **Linear Search Function:** Write a function that accepts an array (of numbers) and a value (number). If an array element is equal to the value, return the index at which the element is found. If it is never found, return -1. *Do not use the indexOf method*
 
-**Solution**
+**Solution:**
 ```javascript
   function linearSearch(arr, value) {
     for (var index in arr) {
@@ -1078,5 +1079,36 @@ With helper method recursion, we have two functions. We have an outer function, 
 * **O(1)** - Best
 * **O(n)** - Average
 * **O(n)** - Worst
+
+----
+### Binary Search
+
+* Binary search is a much faster form of search.
+* Rather than eliminating one element at a time, you can eliminate half of the remaining elements at a time.
+* Binary search only works on sorted arrays.
+
+**Binary Search Function:** Write a function which accepts a sorted array and a value and returns the index at which the value exists. Otherwise, return -1.
+
+**Solution:**
+```javascript
+  function binarySearch(arr, val) {
+
+    let left = 0;
+    let right = arr.length - 1;
+    let middle = Math.floor((left + right) / 2);
+
+    while (arr[middle] !== val && left <= right) {
+      if (val < arr[middle]) right = middle - 1;
+      else left = middle + 1;
+      
+      middle = Math.floor((left + right) / 2);
+    }
+    return arr[middle] === val ? middle : -1;
+  }
+```
+
+**Linear Search Big O**
+* **O(log n)** - Worst and Average Case
+* **O(1)** - Best Case
 
 ----
