@@ -6,6 +6,7 @@
 * [Problem Solving Patterns](#problem-solving-patterns)
 * [Recursion](#recursion)
 * [Searching Algorithms](#searching-algorithms)
+* [Sorting Algorithms](#sorting-algorithms)
 
 ----
 ## Big O Notation
@@ -1136,6 +1137,114 @@ With helper method recursion, we have two functions. We have an outer function, 
     }
     return count;
   }
+```
+
+[Back to Top](#js-data-structures--algorithms) :arrow_up:
+
+----
+## Sorting Algorithms
+
+* [Introduction to Sorting](#introduction-to-sorting)
+* [Built-in JavaScript Sort Method](#built-in-javascript-sort-method)
+* [Bubble Sort](#bubble-sort)
+
+----
+### Introduction to Sorting
+
+**What is Sorting?**
+* Sorting is the process of rearranging the items in a collection (e.g. an array) so that the items are in some kind of order.
+* Some Examples:
+  * Sorting numbers from smallest to largest
+  * Sorting names alphabetically
+  * Sorting movies based on release year
+  * Sorting movies based on revenue
+
+----
+### Built-in JavaScript Sort Method
+
+* The built-in sort method accepts an optional *comparator* function.
+* You can use this comparator function to tell JavaScript how you want it to sort.
+* The comparator looks at pairs of elements (*a* and *b*), determines their sort order based on the return value.
+  * If it returns a negative number, *a* should come before *b*.
+  * If it returns a positive number, *a* should come after *b*.
+  * If it returns 0, *a* and *b* are the same as far as the sort is concerned.
+
+**Example Sort Method Comparison:**
+```javascript
+  //Comparing Numbers
+  function numCompare(num1, num2) {
+    return num1 - num2;
+  }
+
+  console.log([6, 15, 4, 10].sort(numCompare)); // [4,6,10,15]
+```
+
+```javascript
+  //Comparing Length of Strings
+  function compareByLength(str1, str2) {
+    return str1.length - str2.length;
+  }
+
+  console.log(["Zebra", "Coconut", "Apple", "Pine", "Woods"].sort(compareByLength)); //['Pine', 'Zebra', 'Apple', 'Woods', 'Coconut']
+```
+
+----
+### Bubble Sort
+
+A sorting algorithm where the largest values bubble up to the top. Before sorting, we must swap elements (e.g. swapping numbers to put them in order).
+
+**Swapping Function:**
+```javascript
+  // ES5
+  function swap1(arr, idx1, idx2) {
+    var temp = arr[idx1];
+    arr[idx1] = arr[idx2];
+    arr[idx2] = temp;
+  }
+
+  // ES2015
+  const swap2 = (arr, idx1, idx2) => {
+    [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+  }
+```
+
+**Bubble Sort Example:**
+  * Start looping with a variable called *i* at the end of the array towards the beginning.
+  * Start an inner loop with a variable called *j* from the beginning until *i - 1*.
+  * If *arr[j]* is greater than *arr[j+1]*, swap those two values.
+  * Return the sorted array.
+
+```javascript
+  function sort(arr) {
+    for (let i = arr.length; i > 0; i--) {
+      for (let j = 0; j < i - 1; j++) {
+        if (arr[j] > arr[j+1]) {
+          [arr[j], arr[j+1]] = [arr[j+1], arr[j]]
+        }
+      }
+    }
+    return arr;
+}
+
+console.log(sort([10,5,4,30,2])); //[2, 4, 5, 10, 30]
+
+// Optimized Sort Function with noSwaps
+function sort(arr) {
+  let noSwaps;
+  for (let i = arr.length; i > 0; i--) {
+    noSwaps = true;
+    for (let j = 0; j < i - 1; j++) {
+      if (arr[j] > arr[j+1]) {
+        [arr[j], arr[j+1]] = [arr[j+1], arr[j]];
+        noSwaps = false;
+      }
+    }
+    if (noSwaps) break;
+  }
+  return arr;
+}
+
+console.log(sort([10,5,4,30,2])); //[2, 4, 5, 10, 30]
 ```
 
 ----
