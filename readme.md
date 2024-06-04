@@ -1148,6 +1148,7 @@ With helper method recursion, we have two functions. We have an outer function, 
 * [Built-in JavaScript Sort Method](#built-in-javascript-sort-method)
 * [Bubble Sort](#bubble-sort)
 * [Selection Sort](#selection-sort)
+* [Insertion Sort](#insertion-sort)
 
 ----
 ### Introduction to Sorting
@@ -1273,6 +1274,34 @@ function selectionSort(arr) {
 }
 
 console.log(selectionSort([10,5,4,30,2])); //[2, 4, 5, 10, 30]
+```
+
+----
+### Insertion Sort
+
+Builds up the sort by gradually creating a larger left half which is always sorted.
+
+**Insertion Sort Example:**
+* Start by picking the second element in the array.
+* Compare the second element with the one before it and swap if necessary.
+* Continue to the next element and if it is in the incorrect order, iterate through the sorted portion (i.e. the left side) to place the element in the correct place.
+* Repeat until the array is sorted.
+
+```javascript
+function insertionSort(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    let currVal = arr[i];
+    let index = i;
+    for (let j = i - 1; j >= 0 && arr[j] > currVal; j--) {
+      arr[j + 1] = arr[j];
+      index = j;
+    }
+    arr[index] = currVal;
+  }
+  return arr;
+}
+
+console.log(insertionSort([10,5,4,30,2])); //[2, 4, 5, 10, 30]
 ```
 
 ----
