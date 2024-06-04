@@ -1147,6 +1147,7 @@ With helper method recursion, we have two functions. We have an outer function, 
 * [Introduction to Sorting](#introduction-to-sorting)
 * [Built-in JavaScript Sort Method](#built-in-javascript-sort-method)
 * [Bubble Sort](#bubble-sort)
+* [Selection Sort](#selection-sort)
 
 ----
 ### Introduction to Sorting
@@ -1245,6 +1246,33 @@ function sort(arr) {
 }
 
 console.log(sort([10,5,4,30,2])); //[2, 4, 5, 10, 30]
+```
+
+----
+### Selection Sort
+
+Similar to bubble sort, but instead of first placing large values into sorted position, it places small values into sorted position.
+
+**Selection Sort Example:**
+* Store the first element as the smallest value you've seen so far.
+* Compare this item to the next item in the array until you find a smaller number.
+* If a smaller number is found, designate that smaller number to be the new *minimum* and continue until the end of the array.
+* If the *minimum* is not the value (index) you initially began with, swap the two values.
+* Repeat this with the next element until the array is sorted.
+
+```javascript
+function selectionSort(arr) {
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = i+1; j < arr.length; j++) {
+        if (arr[j] < arr[i]) {
+          [arr[j], arr[i]] = [arr[i], arr[j]];
+        }
+      }
+    }
+    return arr;
+}
+
+console.log(selectionSort([10,5,4,30,2])); //[2, 4, 5, 10, 30]
 ```
 
 ----
