@@ -1314,4 +1314,6 @@ console.log(insertionSort([10,5,4,30,2])); //[2, 4, 5, 10, 30]
 | Insertion Sort | O(*n*) | O(*n*<sup>2</sup>) | O(*n*<sup>2</sup>) | O(1) |
 | Selection Sort | O(*n*<sup>2</sup>) | O(*n*<sup>2</sup>) | O(*n*<sup>2</sup>) | O(1) |
 
+[Back to Top](#js-data-structures--algorithms) :arrow_up:
+
 ----
