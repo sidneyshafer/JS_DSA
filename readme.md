@@ -7,6 +7,7 @@
 * [Recursion](#recursion)
 * [Searching Algorithms](#searching-algorithms)
 * [Sorting Algorithms](#sorting-algorithms)
+* [Intermediate Sorting Algorithms](#intermediate-sorting-algorithms)
 
 ----
 ## Big O Notation
@@ -1315,5 +1316,18 @@ console.log(insertionSort([10,5,4,30,2])); //[2, 4, 5, 10, 30]
 | Selection Sort | O(*n*<sup>2</sup>) | O(*n*<sup>2</sup>) | O(*n*<sup>2</sup>) | O(1) |
 
 [Back to Top](#js-data-structures--algorithms) :arrow_up:
+
+----
+## Intermediate Sorting Algorithms
+
+* [Introduction to Faster Sorts](#introduction-to-faster-sorts)
+
+----
+### Introduction to Faster Sorts
+
+* There is a family of sorting algorithms that can improve time complexity from O(*n*<sup>2</sup>) to O(*n* log *n*).
+* There is a trade off between efficiency and simplicity.
+* The more efficient algorithms are much less simple, and generally take longer to understand.
+* The three more efficient algorithms are: merge sort, quick sort, and radix sort.
 
 ----
