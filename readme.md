@@ -1149,6 +1149,7 @@ With helper method recursion, we have two functions. We have an outer function, 
 * [Bubble Sort](#bubble-sort)
 * [Selection Sort](#selection-sort)
 * [Insertion Sort](#insertion-sort)
+* [Big O of Sorting Algorithms](#big-o-of-sorting-algorithms)
 
 ----
 ### Introduction to Sorting
@@ -1303,5 +1304,14 @@ function insertionSort(arr) {
 
 console.log(insertionSort([10,5,4,30,2])); //[2, 4, 5, 10, 30]
 ```
+
+----
+### Big O of Sorting Algorithms
+
+| Algorithm | Time Complexity (Best) | Time Complexity (Average) | Time Complexity (Worst) | Space Complexity |
+| --- | --- | --- | --- | --- |
+| Bubble Sort | O(*n*) | O(*n*<sup>2</sup>) | O(*n*<sup>2</sup>) | O(1) |
+| Insertion Sort | O(*n*) | O(*n*<sup>2</sup>) | O(*n*<sup>2</sup>) | O(1) |
+| Selection Sort | O(*n*<sup>2</sup>) | O(*n*<sup>2</sup>) | O(*n*<sup>2</sup>) | O(1) |
 
 ----
