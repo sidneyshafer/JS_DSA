@@ -1562,6 +1562,9 @@ console.log(radixSort([23, 345, 54678, 12, 2345, 9852])); //[12, 23, 345, 2345, 
 | --- | --- | --- | --- |
 | O(*nk*) | O(*nk*)  | O(*nk*)  | O(*n* + *k*)  |
 
+* *n* - length of array
+* *k* - number of digits (average)
+
 [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
 ----
