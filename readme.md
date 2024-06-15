@@ -1572,6 +1572,7 @@ console.log(radixSort([23, 345, 54678, 12, 2345, 9852])); //[12, 23, 345, 2345, 
 ## Data Structures
 
 * [Introduction to Data Structures](#introduction-to-data-structures)
+* [Singly Linked Lists](#singly-linked-lists)
 
 ----
 ### Introduction to Data Structures
@@ -1712,5 +1713,24 @@ console.log(Point.distance(p1, p2)); //Output: 7.0710678118654755
 * The **constructor** function is a special function that gets run when the class is instantiated.
 * Instance methods can be added to classes similar to methods in objects.
 * Class methods can be added using the **static** keyword.
+
+----
+### Singly Linked Lists
+
+**What is a Linked List?**
+* A data structure that contains a **head**, **tail**, and **length** property.
+* Linked Lists consist of nodes, and each node has a value and a pointer to another node or null (no indices).
+
+**Linked Lists vs Arrays**
+
+**Linked Lists**
+* Do not have indexes.
+* Elements are connected via nodes with a pointer to the next element.
+* Random access is not allowed.
+
+**Arrays**
+* Indexed in order.
+* Insertion and deletion can be expensive.
+* Can quickly be accessed at a specific index.
 
 ----
