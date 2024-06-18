@@ -1733,4 +1733,15 @@ console.log(Point.distance(p1, p2)); //Output: 7.0710678118654755
 * Insertion and deletion can be expensive.
 * Can quickly be accessed at a specific index.
 
+**Singly Linked List Implementation**
+* Push Method Pseudocode:
+  * Function should accept a value.
+  * Create a new node using the value passed to the function.
+  * If there is no head property on the list, set the head and tail to be the newly created node.
+  * Otherwise, set the next property on the tail to be the new node and set the tail property on the list to be the newly created node.
+  * Increment the length by 1.
+  * Return the linked list.
+* Pop Method Pseudocode:
+  *
+
 ----
