@@ -1573,6 +1573,7 @@ console.log(radixSort([23, 345, 54678, 12, 2345, 9852])); //[12, 23, 345, 2345, 
 
 * [Introduction to Data Structures](#introduction-to-data-structures)
 * [Singly Linked Lists](#singly-linked-lists)
+* [Doubly Linked Lists](#doubly-linked-lists)
 
 ----
 ### Introduction to Data Structures
@@ -1965,4 +1966,7 @@ var list = new SinglyLinkedList();
 * Arrays contain a built-in index whereas Linked Lists do not.
 * The idea of a list data structure that consist of nodes is the foundation for other data structures like Stacks and Queues.
 
+[Back to Data Structures](#data-structures) :arrow_up:
+
 ----
+### Doubly Linked Lists
