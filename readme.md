@@ -1734,14 +1734,235 @@ console.log(Point.distance(p1, p2)); //Output: 7.0710678118654755
 * Can quickly be accessed at a specific index.
 
 **Singly Linked List Implementation**
-* Push Method Pseudocode:
+* **Push Method Pseudocode:**
   * Function should accept a value.
   * Create a new node using the value passed to the function.
   * If there is no head property on the list, set the head and tail to be the newly created node.
   * Otherwise, set the next property on the tail to be the new node and set the tail property on the list to be the newly created node.
   * Increment the length by 1.
   * Return the linked list.
-* Pop Method Pseudocode:
-  *
+* **Pop Method Pseudocode:**
+  * If there are no nodes in the list, returned undefined.
+  * Loop through the list until you reach the tail.
+  * Set the next property of the 2nd to last node to be null.
+  * Set the tail to be the 2nd to last node.
+  * Decrement the length of the list by 1.
+  * Return the value of the node removed.
+* **Shift Method Pseudocode:**
+  * If there are no nodes, return undefined.
+  * Store the current head property in a variable.
+  * Set the head property to be the current head's next property.
+  * Decrement the length by 1.
+  * Return the value of the node removed.
+* **Unshift Method Pseudocode:**
+  * Function should accept a value.
+  * Create a new node using the value passed to the function.
+  * If there is no head property on the list, set the head and tail to be the newly created node.
+  * Otherwise, set the newly created node's next property to be the current property on the list.
+* **Get Method Pseudocode:**
+  * Function should accept an index.
+  * If the index is less than zero or greater than or equal to the length of the list, return null.
+  * Loop through the list until you reach the index and return the node at that specific index.
+* **Set Method Pseudocode:**
+  * Function should accept a value and an index.
+  * Use the `get()` function defined previously to find the specific node.
+  * If the node is not found, return false.
+  * If the node is found, set the value of that node to be the value passed to the function and return true.
+* **Insert Method Pseudocode:**
+  * If the index is less than zero or greater than the length, return false.
+  * If the index is the same as the length, `push()` a new node to the end of the list.
+  * If the index is 0, `unshift()` a new node at the start of the list.
+  * Otherwise, using the `get()` method, access the node at the *index - 1*.
+  * Set the next property on that node to be the new node.
+  * Set the next property on the new node to be the previous next.
+  * Increment the length.
+  * Return true.
+* **Remove Method Pseudocode:**
+  * If the index is less than zero or greater than the length, return undefined.
+  * If the index is the same as the *length - 1*, `pop()` the node.
+  * If the index is 0, `shift()` the node.
+  * Otherwise, using the `get()` method, access the node at the *index - 1*.
+  * Set the next property on that node to be the next of the next node.
+  * Decrement the length.
+  * Return the value of the node removed.
+* **Reverse Method Pseudocode:**
+  * Swap the head and tail.
+  * Create a variable called next.
+  * Create a variable called prev.
+  * Create a variable called node and initialize it to the head property.
+  * Loop through the list.
+  * Set next to be the next property on whatever node is.
+  * Set the next property on the node to be whatever prev is.
+  * Set prev to be the value of the node variable.
+  * Set the node variable to be the value of the next variable.
+
+**Singly Linked List Solution:**
+```javascript
+// Create a Node Object
+class Node {
+  // Define a Node
+  // - piece of data (val)
+  // - reference to next node (next)
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+
+// Create a Singly Linked List
+class SinglyLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+  //PUSH METHOD: insert node at end of list
+  push(val) {
+    var newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode;
+    }
+    this.length++;
+    return this;
+  }
+  //POP METHOD: remove the last node from list
+  pop() {
+    if (!this.head) return undefined;
+    var curr = this.head;
+    var newTail = curr;
+    while(curr.next) {
+      newTail = curr;
+      curr = curr.next;
+    }
+    this.tail = newTail;
+    this.tail.next = null;
+    this.length--;
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return curr;
+  }
+  //SHIFT METHOD: remove current head node from list and shift head to next node
+  shift() {
+    if (!this.head) return undefined;
+    var currHead = this.head;
+    this.head = currHead.next;
+    this.length--;
+    if (this.length === 0) {
+      this.tail = null;
+    }
+    return currHead;
+  }
+  //UNSHIFT METHOD: add node to beginning of list
+  unshift(val) {
+    var newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
+  //GET METHOD: return an item/node at a given index
+  get(idx) {
+    if (idx < 0 || idx >= this.length) return null;
+    var counter = 0;
+    var curr = this.head;
+    
+    while (counter != idx) {
+      curr = curr.next;
+      counter++;
+    }
+    return curr;
+  }
+  //SET METHOD: change value of node based on position in list
+  set(idx, val) {
+    var foundNode = this.get(idx);
+    if (foundNode) {
+      foundNode.val = val;
+      return true;
+    }
+    return false;
+  }
+  //INSERT METHOD: add a node to list at a specific position
+  insert(idx, val) {
+    if (idx < 0 || idx > this.length) return false;
+    if (idx === this.length) return !!this.push(val);
+    if (idx === 0) return !!this.unshift(val);
+
+    var newNode = new Node(val);
+    var prev = this.get(idx - 1);
+    var temp = prev.next;
+    prev.next = newNode;
+    newNode.next = temp;
+    this.length++;
+    return true;
+  }
+  //REMOVE METHOD: remove a node from list at a specific position
+  remove(idx) {
+    if (idx < 0 || idx >= this.length) return undefined;
+    if (idx === 0) return this.shift();
+    if (idx === (this.length - 1)) return this.pop();
+
+    var prev = this.get(idx - 1);
+    var removed = prev.next;
+    prev.next = removed.next;
+    this.length--;
+    return removed;
+  }
+  //REVERSE METHOD: reverse list
+  reverse() {
+    var node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+
+    var prev = null;
+    var next;
+
+    for (var i = 0; i < this.length; i++) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+    return this;
+  }
+  //PRINT METHOD: prints all values in list in order as an array
+  print() {
+    var arr = [];
+    var curr = this.head;
+    while (curr) {
+      arr.push(curr.val);
+      curr = curr.next;
+    }
+    console.log(arr);
+  }
+}
+
+//Create a new instance of Singly Linked List
+var list = new SinglyLinkedList();
+```
+
+**Big 0 of Singly Linked Lists**
+ 
+| | |
+| --- | --- |
+| Insertion | **O(1)**  |
+| Removal | **O(1) *or* O(*n*)**  |
+| Searching | **O(*n*)**  |
+| Access | **O(*n*)**  |
+
+**Summary**
+* Singly linked Lists are good alternative to arrays when insertion and deletion at the beginning are frequently required.
+* Arrays contain a built-in index whereas Linked Lists do not.
+* The idea of a list data structure that consist of nodes is the foundation for other data structures like Stacks and Queues.
 
 ----
