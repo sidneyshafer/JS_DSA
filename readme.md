@@ -2205,4 +2205,6 @@ var list = new DoublyLinkedList();
 * Doubly Linked Lists are better than Singly Linked Lists for finding nodes and can be done in half the time.
 * Doubly Linked Lists do however, take up more memory considering the extra pointer.
 
+[Back to Data Structures](#data-structures) :arrow_up: [Back to Top](#js-data-structures--algorithms) :arrow_up:
+
 ----
