@@ -123,6 +123,21 @@ class DoublyLinkedList {
     this.length++;
     return true;
   }
+  //REMOVE METHOD: remove a node in a doubly linked list by a certain position
+  remove(idx) {
+    if (idx < 0 || idx >= this.length) return undefined;
+    if (idx === 0) return this.shift();
+    if (idx === this.length-1) return this.pop();
+
+    var removedNode = this.get(idx);
+
+    removedNode.prev.next = removedNode.next;
+    removedNode.next.prev = removedNode.prev;
+    removedNode.next = null, removedNode.prev = null;
+
+    this.length--;
+    return removedNode;
+  }
 }
 
 var list = new DoublyLinkedList();
@@ -136,7 +151,8 @@ list.push(400);
 
 // list.pop();
 // console.log(list.shift());
-console.log(list.insert(1, 150));
+// console.log(list.insert(1, 150));
+console.log(list.remove(1));
 console.log(list);
 // console.log(list.set(1, 50));
 // console.log(list.get(0));
