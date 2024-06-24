@@ -108,6 +108,21 @@ class DoublyLinkedList {
     }
     return false;
   }
+  //INSERT METHOD: add a node in a doubly linked list by a certain position
+  insert(idx, val) {
+    if (idx < 0 || idx > this.length) return false;
+    if (idx === 0) return !!this.unshift(val);
+    if (idx === this.length) return !!this.push(val);
+
+    var newNode = new Node(val);
+    var beforeNode = this.get(idx-1);
+    var afterNode = beforeNode.next;
+
+    beforeNode.next = newNode, newNode.prev = beforeNode;
+    newNode.next = afterNode, afterNode.prev = newNode;
+    this.length++;
+    return true;
+  }
 }
 
 var list = new DoublyLinkedList();
@@ -116,11 +131,12 @@ list.push(100);
 list.push(200);
 list.push(300);
 list.push(400);
-list.push(500);
-list.push(600);
-// console.log(list);
+// list.push(500);
+// list.push(600);
+
 // list.pop();
 // console.log(list.shift());
+console.log(list.insert(1, 150));
 console.log(list);
 // console.log(list.set(1, 50));
 // console.log(list.get(0));
