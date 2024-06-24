@@ -2191,4 +2191,18 @@ class DoublyLinkedList {
 var list = new DoublyLinkedList();
 ```
 
+**Big 0 of Doubly Linked Lists**
+ 
+| | |
+| --- | --- |
+| Insertion | **O(1)**  |
+| Removal | **O(1)** |
+| Searching | **O(*n*)**  |
+| Access | **O(*n*)**  |
+
+**Summary & Comparison**
+* Doubly Linked Lists are almost identical to Singly Linked Lists except there is an additional pointer to previous nodes.
+* Doubly Linked Lists are better than Singly Linked Lists for finding nodes and can be done in half the time.
+* Doubly Linked Lists do however, take up more memory considering the extra pointer.
+
 ----
