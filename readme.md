@@ -1970,3 +1970,62 @@ var list = new SinglyLinkedList();
 
 ----
 ### Doubly Linked Lists
+
+**Introduction**
+* Doubly Linked Lists are almost identical to Singly Linked Lists, except every node has another pointer to the previous node.
+* Doubly Linked Lists take more memory than Singly Linked Lists, but are more flexible.
+
+**Doubly Linked List Pseudocode**
+* **Push Method:** add a node to the end of a doubly linked list.
+  * Create a new node with the value passed to the function.
+  * If the head property is null, set the head and tail to be the newly created node.
+  * If not, set the next property on the tail to be that node.
+  * Set the previous property on the newly created node to be the tail.
+  * Set the tail to be the newly created node.
+  * Increment the length.
+  * Return the doubly linked list.
+* **Pop Method:** remove a node from the end of a doubly linked list.
+  * If there is no head, return undefined.
+  * Otherwise, store the current tail in a variable to return later.
+  * If the length is 1, set the head and tail to be null.
+  * Update the tail to be the previous node.
+  * Set the new tail's next to null.
+  * Decrement the length by 1.
+  * Return the value removed.
+* **Shift Method:** remove a node from the beginning of a doubly linked list.
+  * If the length is 0, return undefined.
+  * Store the current head property in a variable (call is old head).
+  * If the length is 1:
+    * Set the head to be null
+    * Set the tail to be null
+  * Update the head to be the next of the old head.
+  * Set the head's prev property to null.
+  * Set the old head's next to null.
+  * Decrement the length by 1.
+  * Return the old head.
+* **Unshift Method:** add a node to the beginning of a doubly linked list.
+  * Create a new node with the value passed to the function.
+  * If the length is 0:
+    * Set the head to be the new node
+    * Set the tail to be the new node
+  * Otherwise:
+    * Set the prev property on the head of the list to be the new node.
+    * Set the next property on the new node to be the head property.
+    * Update the head to be the new node.
+  * Increment the length.
+  * Return the list.
+* **Get Method:** access a node in a doubly linked list by its position.
+  * If the index is less than 0 or greater or equal to the length, return null.
+  * If the index is less than or equal to half the length of the list:
+    * Loop through the list starting from the head and loop towards the middle.
+    * Return the node once it is found.
+  * If the index is greater than half the length of the list:
+    * Loop through the list starting from the tail and loop towards the middle.
+    * Return the node once it is found.
+* **Set Method:** replacing the value of a node in a doubly linked list.
+  * Create a variable which is the result of the `get()` method at the index passed to the function.
+    * If the `get()` method returns a valid node, set the value of that node to be the value passed to the function.
+    * Return true.
+  * Otherwise, return false.
+
+----
