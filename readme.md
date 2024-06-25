@@ -1967,7 +1967,7 @@ var list = new SinglyLinkedList();
 * Arrays contain a built-in index whereas Linked Lists do not.
 * The idea of a list data structure that consist of nodes is the foundation for other data structures like Stacks and Queues.
 
-[Back to Data Structures](#data-structures) :arrow_up:
+[Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
 ----
 ### Doubly Linked Lists
@@ -2206,7 +2206,7 @@ var list = new DoublyLinkedList();
 * Doubly Linked Lists are better than Singly Linked Lists for finding nodes and can be done in half the time.
 * Doubly Linked Lists do however, take up more memory considering the extra pointer.
 
-[Back to Data Structures](#data-structures) :arrow_up: [Back to Top](#js-data-structures--algorithms) :arrow_up:
+[Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
 ----
 ### Stacks and Queues
@@ -2237,5 +2237,7 @@ stack.unshift("amazon");
 console.log(stack.shift());
 console.log(stack);
 ```
+
+[Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
 ----
