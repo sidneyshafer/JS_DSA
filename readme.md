@@ -1574,6 +1574,7 @@ console.log(radixSort([23, 345, 54678, 12, 2345, 9852])); //[12, 23, 345, 2345, 
 * [Introduction to Data Structures](#introduction-to-data-structures)
 * [Singly Linked Lists](#singly-linked-lists)
 * [Doubly Linked Lists](#doubly-linked-lists)
+* [Stacks and Queues](#stacks-and-queues)
 
 ----
 ### Introduction to Data Structures
@@ -2206,5 +2207,35 @@ var list = new DoublyLinkedList();
 * Doubly Linked Lists do however, take up more memory considering the extra pointer.
 
 [Back to Data Structures](#data-structures) :arrow_up: [Back to Top](#js-data-structures--algorithms) :arrow_up:
+
+----
+### Stacks and Queues
+
+**Stack Introduction**
+* A **LIFO (Last In, First Out)** data structure.
+* The last element added to the stack will be the first element removed from the stack.
+* Stacks are used:
+  * Managing function invocations
+  * Undo/Redo functionality
+  * Routing (the history object)
+
+**Stack Implementation Using an Array**
+* Use an array to create a stack.
+* Use `push()` and `pop()` so first thing added is the first removed.
+* Or, use `unshift()` and `shift()` so first item added is the first removed.
+
+```javascript
+var stack = [];
+
+stack.push("google");
+stack.push("instagram");
+stack.push("youtube");
+
+// console.log(stack.pop());
+stack.unshift("amazon");
+
+console.log(stack.shift());
+console.log(stack);
+```
 
 ----
