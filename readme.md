@@ -2221,8 +2221,8 @@ var list = new DoublyLinkedList();
 
 **Stack Implementation Using an Array**
 * Use an array to create a stack.
-* Use `push()` and `pop()` so first thing added is the first removed.
-* Or, use `unshift()` and `shift()` so first item added is the first removed.
+* Use `push()` and `pop()` so last item added is the first removed.
+* Or, use `unshift()` and `shift()` so last item added is the first removed.
 
 ```javascript
 var stack = [];
@@ -2311,6 +2311,38 @@ var stack = new Stack();
 | Removal | **O(1)** |
 | Searching | **O(*n*)**  |
 | Access | **O(*n*)**  |
+
+[Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
+
+----
+
+**Queues Introduction**
+* A data stucture for adding and removing data.
+* Queues are a **FIFO (First In, First Out)** data structure.
+* Queues are used in:
+  * Background tasks
+  * Uploading resources
+  * Printing/task processing
+
+**Queue Implementation Using an Array**
+* Use an array to create a queue.
+* Use `push()` and `shift()` so first item added is the first removed.
+* Or, use `unshift()` and `pop()` so first item added is the first removed.
+```javascript
+//Building a Queue with an array
+var q = [];
+
+q.push("ONE");
+q.push("TWO");
+q.push("THREE");
+
+console.log(q);
+console.log(q.shift()); //Output: ONE
+console.log(q.shift()); //Output: TWO
+console.log(q.shift()); //Output: THREE
+
+//ANOTHER SOLUTION: you could combine unshift() and pop()
+```
 
 [Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
