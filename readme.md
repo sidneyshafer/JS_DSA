@@ -2421,6 +2421,19 @@ var q = new Queue();
 ----
 ### Trees - Binary Search Trees
 
+**What is a Tree?**
+* A tree is a type of data structure that consists of nodes in a parent/child relationship.
+* Lists (talked about earlier) are linear.
+* Trees are **nonlinear**.
+
+**Tree Terminology**
+* **Root** - the top node in a tree.
+* **Child** - a node directly connected to another node when moving away from the *root*.
+* **Parent** - the converse notion of a child.
+* **Siblings** - a group of nodes with the same parent.
+* **Leaf** - a node with no children.
+* **Edge** - the connection between one node and another.
+
 [Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
 ----
