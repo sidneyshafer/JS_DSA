@@ -2434,6 +2434,24 @@ var q = new Queue();
 * **Leaf** - a node with no children.
 * **Edge** - the connection between one node and another.
 
+**Uses For Trees**
+* HTML DOM
+* Network Routing
+* Abstract Syntax Tree
+* Artificial Intelligence
+* Folder Structure in Operating System
+* Computer File Systems
+
+**Kinds of Trees**
+* Trees
+* Binary Trees
+* Binary Search Trees
+
+**How Binary Search Trees Work**
+* Every parent node has at most two children.
+* Every node to the left of a parent node is always less than the parent.
+* Every node to the right of a parent node is always greater than the parent.
+
 [Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
 ----
