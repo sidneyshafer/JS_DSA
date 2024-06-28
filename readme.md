@@ -1576,6 +1576,7 @@ console.log(radixSort([23, 345, 54678, 12, 2345, 9852])); //[12, 23, 345, 2345, 
 * [Doubly Linked Lists](#doubly-linked-lists)
 * [Stacks and Queues](#stacks-and-queues)
 * [Trees - Binary Search Trees](#trees---binary-search-trees)
+* [Tree Traversal](#tree-traversal)
 
 ----
 ### Introduction to Data Structures
@@ -2523,6 +2524,11 @@ var tree = new BinarySearchTree();
 | --- | --- |
 | Insertion | **O(log *n*)**  |
 | Searching | **O(log *n*)**  |
+
+[Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
+
+----
+### Tree Traversal
 
 [Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
