@@ -2452,6 +2452,78 @@ var q = new Queue();
 * Every node to the left of a parent node is always less than the parent.
 * Every node to the right of a parent node is always greater than the parent.
 
+**Binary Search Tree Class Code:**
+```javascript
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+  //INSERT METHOD: inserting a node into a binary search tree
+  insert(value) {
+    var newNode = new Node(value);
+
+    if (this.root === null) {
+      this.root = newNode;
+      return this;
+    } else {
+      var current = this.root;
+
+      while (true) {
+        if (value < current.value) {
+          if (current.left === null) {
+            current.left = newNode;
+            return this;
+          } else {
+            current = current.left;
+          }
+        } else if (value > current.value) {
+          if (current.right === null) {
+            current.right = newNode;
+            return this;
+          } else {
+            current = current.right;
+          }
+        }
+      }
+    }
+  }
+  //FIND METHOD: finding a node in a binary search tree
+  find(value) {
+    if (this.root === null) return false;
+
+    var current = this.root, found = false;
+    while (current && !found) {
+      if (value < current.value) {
+        current = current.left;
+      } else if (value > current.value) {
+        current = current.right;
+      } else {
+        found = true;
+      }
+    }
+    if (!found) return undefined;
+    return current;
+  }
+}
+
+var tree = new BinarySearchTree();
+```
+
+**Big O of Binary Search Trees**
+
+| | |
+| --- | --- |
+| Insertion | **O(log *n*)**  |
+| Searching | **O(log *n*)**  |
+
 [Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
 ----
