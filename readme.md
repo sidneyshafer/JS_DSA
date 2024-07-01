@@ -2573,6 +2573,15 @@ var tree = new BinarySearchTree();
 * Invoke the helper function with the current variable.
 * Return the array of values.
 
+**Comparing BFS & DFS**
+* Keeping track of nodes (Space Complexity - depends on the tree)
+  * Breadth First - lots of nodes to keep track of
+  * Depth First - fewer nodes to keep track of
+* Time Complexity - the same for BFS and DFS
+* DFS - InOrder is most commonly used with BST's
+  * Returns all nodes in the tree in their underlying order
+* DFS - PreOrder can be used to "export" a tree structure so that it is easily reconstructed or copied.
+
 [Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
 ----
