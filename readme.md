@@ -1577,6 +1577,7 @@ console.log(radixSort([23, 345, 54678, 12, 2345, 9852])); //[12, 23, 345, 2345, 
 * [Stacks and Queues](#stacks-and-queues)
 * [Trees - Binary Search Trees](#trees---binary-search-trees)
 * [Tree Traversal](#tree-traversal)
+* [Binary Heaps](#binary-heaps)
 
 ----
 ### Introduction to Data Structures
@@ -2587,6 +2588,12 @@ var tree = new BinarySearchTree();
 * Binary Trees can have values of any type, but at most two children for each parent.
 * Binary Search Trees are a more specific version of binary trees where every node to the left of a parent is less than it's value and every node to the right is greater.
 * We can search through Trees using BFS and DFS.
+
+[Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
+
+----
+
+### Binary Heaps
 
 [Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
