@@ -58,7 +58,7 @@ class BinarySearchTree {
     return current;
   }
   //BFS METHOD: visit each node in a BST list and return a list of all values
-  breadthFirstSearch() {
+  BFS() {
     var data = [], queue = [], node = this.root;
     
     queue.push(node);
@@ -82,4 +82,4 @@ tree.insert(7);
 tree.insert(2);
 
 console.log(tree);
-console.log(tree.breadthFirstSearch());
+console.log(tree.BFS());
