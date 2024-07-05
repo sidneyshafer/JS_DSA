@@ -2608,6 +2608,13 @@ var tree = new BinarySearchTree();
 
 Binary Heaps are used to implement **priority queues**, which are commonly used data strcutures. They are also used with **graph traversal** algorithms.
 
+**Storing a (max) Binary Heap using an Array**
+* For any index of an array `n`...
+  * The left child is stored at `2n + 1`
+  * The right child is at `2n + 2`
+* For any child node at index `n`...
+  * It's parent is at index `(n-1) / 2` *floored*
+
 [Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
 ----
