@@ -2595,6 +2595,19 @@ var tree = new BinarySearchTree();
 
 ### Binary Heaps
 
+**What is a Binary Heap?**
+* Very similar to binary search tree.
+* In a **Max Binary Heap**, parent nodes are always larger than child nodes.
+* In a **Min Binary Heap**, parent nodes are always smaller than childe nodes.
+
+**Max Binary Heap**
+* Each parent has at most two child nodes.
+* The value of each parent node is always greater than its child nodes.
+* In a Max Binary Heap, the parent is greater than the children, but there are no guarantees between sibling nodes.
+* A binary heap is as compact as possible. All the children of each node are as full as they can be and left children are filled out first.
+
+Binary Heaps are used to implement **priority queues**, which are commonly used data strcutures. They are also used with **graph traversal** algorithms.
+
 [Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
 ----
