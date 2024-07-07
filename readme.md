@@ -2848,6 +2848,11 @@ console.log(q);
   * Java, Go, and Scala have **maps**
   * Ruby has **hashes**
 
+**Hash Table Implementation**
+This example uses an *array* to implement a hash table.
+
+In order to look up values by key, we need a way to *convert keys into valid array indices*. A function that performs this task is called a *hash function*.
+
 [Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
 ----
