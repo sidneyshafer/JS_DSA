@@ -2853,8 +2853,6 @@ This example uses an *array* to implement a hash table.
 
 In order to look up values by key, we need a way to *convert keys into valid array indices*. A function that performs this task is called a *hash function*.
 
-[Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
-
 **Hash Function That Works on Strings**
 ```javascript
 function hash(key, arrayLen) {
@@ -2866,5 +2864,23 @@ function hash(key, arrayLen) {
     return total;
 }
 ```
+
+**Improved Hash Function (with primary number)**
+* A prime number in the hash is helpful in spreading out the keys more uniformly.
+* It is also helpful if the array that you're putting values into has a prime length.
+```javascript
+function hash(key, arrayLen) {
+    let total = 0;
+    let DUMMY_PRIME = 31;
+    for (let i = 0; i < Math.min(key.length, 100); i++) {
+        let char = key[i];
+        let value = char.charCodeAt(0) - 96;
+        total = (total * DUMMY_PRIME + value) % arrayLen;
+    }
+    return total;
+}
+```
+
+[Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
 ----
