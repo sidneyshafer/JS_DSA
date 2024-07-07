@@ -2655,6 +2655,11 @@ Binary Heaps are used to implement **priority queues**, which are commonly used 
 | Removal | **O(log *n*)**  |
 | Searching | **O(*n*)**  |
 
+**Summary**
+* Binary Heaps are usefult data structures for sorting, and implementing other data structures like priority queues.
+* Binary Heaps are either MaxBinaryHeaps or MinBinaryHeaps with parents either being smaller or larger than their children.
+* We can represent heaps using arrays.
+
 [Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
 ----
