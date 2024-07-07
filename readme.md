@@ -2838,6 +2838,16 @@ console.log(q);
 ----
 ### Hash Tables
 
+**What are Hash Tables?**
+* Hash tables are used to store *key-value* pairs.
+* They are like arrays, but the keys are not ordered.
+* Unlike arrays, hash tables are *fast* for all of the following operations: finding values, adding new values, and removing values.
+* Hash Table Examples:
+  * Python has **dictionaries**
+  * JavaScript has **objects** and **maps**
+  * Java, Go, and Scala have **maps**
+  * Ruby has **hashes**
+
 [Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
 ----
