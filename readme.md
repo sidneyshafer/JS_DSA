@@ -2855,4 +2855,16 @@ In order to look up values by key, we need a way to *convert keys into valid arr
 
 [Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
+**Hash Function That Works on Strings**
+```javascript
+function hash(key, arrayLen) {
+    let total = 0;
+    for (let char of key) {
+        let value = char.charCodeAt(0) - 96;
+        total = (total + value) % arrayLen;
+    }
+    return total;
+}
+```
+
 ----
