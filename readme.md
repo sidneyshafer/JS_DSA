@@ -2647,6 +2647,14 @@ Binary Heaps are used to implement **priority queues**, which are commonly used 
 * **Enqueue** method accepts a value and priority, makes a new node, and puts it in the right spot based off of its priority.
 * **Dequeue** method removes root element, returns it, and rearranges heap using priority.
 
+**Big O of Binary Heaps**
+
+| | |
+| --- | --- |
+| Insertion | **O(log *n*)**  |
+| Removal | **O(log *n*)**  |
+| Searching | **O(*n*)**  |
+
 [Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
 ----
