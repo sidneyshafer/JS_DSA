@@ -2637,6 +2637,16 @@ Binary Heaps are used to implement **priority queues**, which are commonly used 
     * Keep looping and swapping until neither child is larger than the element.
     * Return the old root.
 
+**Priority Queue**
+**What is a Priority Queue?**
+  * A data structure where each element has a priority. Elements with higher priorities are served before elements with lower priorities.
+
+**Priority Queue Pseudocode**
+* Write a *Min Binary Heap* - lower number means higher priority.
+* Each node has a `val` and `priority`. Use the priority to help build the heap.
+* **Enqueue** method accepts a value and priority, makes a new node, and puts it in the right spot based off of its priority.
+* **Dequeue** method removes root element, returns it, and rearranges heap using priority.
+
 [Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
 ----
