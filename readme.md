@@ -1578,6 +1578,7 @@ console.log(radixSort([23, 345, 54678, 12, 2345, 9852])); //[12, 23, 345, 2345, 
 * [Trees - Binary Search Trees](#trees---binary-search-trees)
 * [Tree Traversal](#tree-traversal)
 * [Binary Heaps](#binary-heaps)
+* [Hash Tables](#hash-tables)
 
 ----
 ### Introduction to Data Structures
@@ -2831,6 +2832,11 @@ console.log(q);
 * Binary Heaps are usefult data structures for sorting, and implementing other data structures like priority queues.
 * Binary Heaps are either MaxBinaryHeaps or MinBinaryHeaps with parents either being smaller or larger than their children.
 * We can represent heaps using arrays.
+
+[Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
+
+----
+### Hash Tables
 
 [Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
