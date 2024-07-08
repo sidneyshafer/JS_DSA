@@ -2881,6 +2881,19 @@ function hash(key, arrayLen) {
 }
 ```
 
+**Dealing with Collisions**
+* Collitions are inevitable. There are many strategies for dealing with collisions, for example:
+  * Separate Chaining
+  * Linear Probing
+
+**Separate Chaining**
+* With *separate chaining*, at each index in the array, we store values using a more sophisticated data structure (e.g. an array or linked list).
+  * This allows storage of multiple key-value pairs at the same index.
+
+**Linear Probing**
+* With *linear probing*, when a collision is found, we search through the array to find the next empty slot.
+  * This allows storage of a single key-value pair at each index.
+
 [Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
 ----
