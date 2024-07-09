@@ -2901,6 +2901,14 @@ function hash(key, arrayLen) {
 | Removal | **O(1)**  |
 | Access | **O(1)**  |
 
+**Summary of Hash Tables**
+* Hash tables are collections of key-value pairs.
+* Hash tables can find values quickly given a key.
+* Hash tables can add new key-values quickly.
+* Hash tables store data in a large array, and work by *hashing* the keys.
+* A good hash should be fast, distribute keys uniformly, and be deterministic.
+* Separate chaining and linear probing are two strategies used to deal with two keys that hash to the same index.
+
 [Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
 ----
