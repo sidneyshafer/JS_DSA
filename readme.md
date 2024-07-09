@@ -1579,6 +1579,7 @@ console.log(radixSort([23, 345, 54678, 12, 2345, 9852])); //[12, 23, 345, 2345, 
 * [Tree Traversal](#tree-traversal)
 * [Binary Heaps](#binary-heaps)
 * [Hash Tables](#hash-tables)
+* [Graphs](#graphs)
 
 ----
 ### Introduction to Data Structures
@@ -2908,6 +2909,12 @@ function hash(key, arrayLen) {
 * Hash tables store data in a large array, and work by *hashing* the keys.
 * A good hash should be fast, distribute keys uniformly, and be deterministic.
 * Separate chaining and linear probing are two strategies used to deal with two keys that hash to the same index.
+
+[Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
+
+----
+
+### Graphs
 
 [Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
