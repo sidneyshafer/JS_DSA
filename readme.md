@@ -2894,6 +2894,13 @@ function hash(key, arrayLen) {
 * With *linear probing*, when a collision is found, we search through the array to find the next empty slot.
   * This allows storage of a single key-value pair at each index.
 
+**Big O of Hash Tables**
+| | |
+| --- | --- |
+| Insertion | **O(1)**  |
+| Removal | **O(1)**  |
+| Access | **O(1)**  |
+
 [Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
 ----
