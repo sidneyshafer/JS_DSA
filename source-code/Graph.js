@@ -17,15 +17,29 @@ class Graph {
             v => v !== v1
         );
     }
+    removeVertex(vertex) {
+        while(this.adjacencyList[vertex].length) {
+            const adjacencyVertex = this.adjacencyList[vertex].pop();
+            this.removeEdge(vertex, adjacencyVertex);
+        }
+        delete this.adjacencyList[vertex];
+    }
 }
 
 var g = new Graph();
 g.addVertex("Apple");
 g.addVertex("Bread");
 g.addVertex("Eggs");
+g.addVertex("Grapes");
+g.addVertex("Potato Chips");
 
 g.addEdge("Apple", "Bread");
+g.addEdge("Potato Chips", "Grapes");
+g.addEdge("Grapes", "Eggs");
 g.addEdge("Eggs", "Bread");
+g.addEdge("Apple", "Grapes");
 // g.removeEdge("Eggs", "Bread");
+
+g.removeVertex("Apple");
 
 console.log(g);
