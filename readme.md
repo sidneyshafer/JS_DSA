@@ -2943,4 +2943,9 @@ A **graph data structure** consists of a finit (and possibly mutable) set of ver
 
 [Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
+**Adjacency List Graph Pseudocode**
+* **Adding a Vertex**
+  * Write a method called `addVertex`, which accepts a name of a vertex.
+  * It should add a key to the adjacency list with the name of the vertex and set its value to be ab empty array.
+
 ----
