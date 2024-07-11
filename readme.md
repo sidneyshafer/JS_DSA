@@ -2941,8 +2941,6 @@ A **graph data structure** consists of a finit (and possibly mutable) set of ver
 * Slower to iterate over all edges
 * Faster to lookup specific edge
 
-[Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
-
 **Adjacency List Graph Pseudocode**
 * **Adding a Vertex**
   * Write a method called `addVertex`, which accepts a name of a vertex.
@@ -2993,5 +2991,7 @@ class Graph {
 
 var g = new Graph();
 ```
+
+[Back to Data Structures](#data-structures) :arrow_up: | [Back to Top](#js-data-structures--algorithms) :arrow_up:
 
 ----
