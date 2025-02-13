@@ -1,5 +1,5 @@
 # JS Data Structures & Algorithms
->Notes and code examples for learning data structures and algorithms in JavaScript.
+>Guide to learning data structures and algorithms in JavaScript.
 
 * [Big O Notation](#big-o-notation)
 * [Array and Object Performance](#array-and-object-performance)
